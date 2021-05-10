@@ -1,0 +1,816 @@
+2021-05-06 19:48:15.159  INFO 13764 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 13764 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-05-06 19:48:15.163 DEBUG 13764 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-05-06 19:48:15.164  INFO 13764 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-05-06 19:48:15.198  INFO 13764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 19:48:15.199  INFO 13764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 19:48:16.005  INFO 13764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-06 19:48:16.011  INFO 13764 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 19:48:16.012  INFO 13764 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-06 19:48:16.073  INFO 13764 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 19:48:16.073  INFO 13764 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 874 ms
+2021-05-06 19:48:16.602  INFO 13764 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 19:48:16.645  INFO 13764 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-06 19:48:16.683  WARN 13764 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-05-06 19:48:16.850  INFO 13764 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 19:48:16.898  INFO 13764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-06 19:48:16.901  INFO 13764 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 2.061 seconds (JVM running for 2.599)
+2021-05-06 19:48:27.061  INFO 13764 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 19:48:27.062  INFO 13764 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 19:48:27.066  INFO 13764 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-05-06 19:48:27.094  INFO 13764 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-06 19:48:27.193  INFO 13764 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-06 19:48:27.199 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-05-06 19:48:27.211 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-05-06 19:48:27.230 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-05-06 19:48:27.242 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 19:48:27.242 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 19:48:27.243 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 19:48:27.244 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 19:48:27.244 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 19:48:27.245 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 19:48:27.245 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-05-06 19:48:27.245 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-05-06 19:48:27.246 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-05-06 19:48:27.260 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-05-06 19:48:27.261 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-05-06 19:48:27.264 DEBUG 13764 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-05-06 19:49:59.504  INFO 26588 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 26588 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-05-06 19:49:59.506 DEBUG 26588 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-05-06 19:49:59.507  INFO 26588 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-05-06 19:49:59.552  INFO 26588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 19:49:59.552  INFO 26588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 19:50:00.302  INFO 26588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-06 19:50:00.307  INFO 26588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 19:50:00.307  INFO 26588 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-06 19:50:00.357  INFO 26588 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 19:50:00.357  INFO 26588 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 805 ms
+2021-05-06 19:50:00.814  INFO 26588 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 19:50:00.850  INFO 26588 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-06 19:50:00.882  WARN 26588 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-05-06 19:50:00.982  INFO 26588 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 19:50:01.018  INFO 26588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-06 19:50:01.020  INFO 26588 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 1.854 seconds (JVM running for 2.388)
+2021-05-06 19:50:04.891  INFO 26588 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 19:50:04.891  INFO 26588 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 19:50:04.901  INFO 26588 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-05-06 19:50:05.088 ERROR 26588 --- [http-nio-8081-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-1] Exception processing template "error/404": An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.attoparser.ParseException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 36 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 38 common frames omitted
+
+2021-05-06 19:50:05.090 ERROR 26588 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+2021-05-06 19:50:05.091 ERROR 26588 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 25 common frames omitted
+Caused by: org.attoparser.ParseException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 36 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 38 common frames omitted
+
+2021-05-06 19:50:08.766 ERROR 26588 --- [http-nio-8081-exec-8] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-8] Exception processing template "error/404": An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.attoparser.ParseException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 36 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 38 common frames omitted
+
+2021-05-06 19:50:08.766 ERROR 26588 --- [http-nio-8081-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+2021-05-06 19:50:08.767 ERROR 26588 --- [http-nio-8081-exec-8] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 25 common frames omitted
+Caused by: org.attoparser.ParseException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 36 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 38 common frames omitted
+
+2021-05-06 19:50:09.551 ERROR 26588 --- [http-nio-8081-exec-9] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-9] Exception processing template "error/404": An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.attoparser.ParseException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 36 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 38 common frames omitted
+
+2021-05-06 19:50:09.552 ERROR 26588 --- [http-nio-8081-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+2021-05-06 19:50:09.552 ERROR 26588 --- [http-nio-8081-exec-9] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/404.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 25 common frames omitted
+Caused by: org.attoparser.ParseException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 36 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [te_fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/404" - line 14, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 38 common frames omitted
+
+2021-05-06 19:50:53.823  INFO 19376 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 19376 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-05-06 19:50:53.825 DEBUG 19376 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-05-06 19:50:53.826  INFO 19376 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-05-06 19:50:53.864  INFO 19376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 19:50:53.864  INFO 19376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 19:50:54.600  INFO 19376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-06 19:50:54.606  INFO 19376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 19:50:54.606  INFO 19376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-06 19:50:54.656  INFO 19376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 19:50:54.656  INFO 19376 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 792 ms
+2021-05-06 19:50:55.131  INFO 19376 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 19:50:55.171  INFO 19376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-06 19:50:55.204  WARN 19376 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-05-06 19:50:55.313  INFO 19376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 19:50:55.350  INFO 19376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-06 19:50:55.352  INFO 19376 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 1.851 seconds (JVM running for 2.364)
+2021-05-06 19:50:56.860  INFO 19376 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 19:50:56.861  INFO 19376 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 19:50:56.865  INFO 19376 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-05-06 19:51:17.711  INFO 11120 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 11120 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-05-06 19:51:17.713 DEBUG 11120 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-05-06 19:51:17.714  INFO 11120 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-05-06 19:51:17.756  INFO 11120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 19:51:17.756  INFO 11120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 19:51:18.485  INFO 11120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-06 19:51:18.490  INFO 11120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 19:51:18.491  INFO 11120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-06 19:51:18.538  INFO 11120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 19:51:18.539  INFO 11120 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 783 ms
+2021-05-06 19:51:18.989  INFO 11120 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 19:51:19.026  INFO 11120 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-06 19:51:19.058  WARN 11120 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-05-06 19:51:19.159  INFO 11120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 19:51:19.193  INFO 11120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-06 19:51:19.195  INFO 11120 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 1.781 seconds (JVM running for 2.28)
+2021-05-06 19:51:27.234  INFO 11120 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 19:51:27.234  INFO 11120 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 19:51:27.237  INFO 11120 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-05-06 19:59:01.138  INFO 26068 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 26068 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-05-06 19:59:01.140 DEBUG 26068 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-05-06 19:59:01.140  INFO 26068 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-05-06 19:59:01.174  INFO 26068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 19:59:01.174  INFO 26068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 19:59:01.889  INFO 26068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-06 19:59:01.895  INFO 26068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 19:59:01.895  INFO 26068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-06 19:59:01.941  INFO 26068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 19:59:01.942  INFO 26068 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 768 ms
+2021-05-06 19:59:02.399  INFO 26068 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 19:59:02.437  INFO 26068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-06 19:59:02.471  WARN 26068 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-05-06 19:59:02.575  INFO 26068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 19:59:02.614  INFO 26068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-06 19:59:02.616  INFO 26068 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 1.746 seconds (JVM running for 2.212)
+2021-05-06 19:59:13.284  INFO 26068 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 19:59:13.284  INFO 26068 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 19:59:13.294  INFO 26068 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2021-05-06 19:59:32.337  INFO 26068 --- [http-nio-8081-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-06 19:59:32.421  INFO 26068 --- [http-nio-8081-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-06 19:59:32.426 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-05-06 19:59:32.438 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-05-06 19:59:32.453 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-05-06 19:59:32.464 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 19:59:32.464 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 19:59:32.465 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:32.466 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 19:59:32.466 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 19:59:32.467 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 19:59:32.467 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-05-06 19:59:32.467 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-05-06 19:59:32.468 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-05-06 19:59:32.482 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-05-06 19:59:32.482 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-05-06 19:59:32.485 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:42.569 DEBUG 26068 --- [http-nio-8081-exec-10] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 19:59:42.569 DEBUG 26068 --- [http-nio-8081-exec-10] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 19:59:42.570 DEBUG 26068 --- [http-nio-8081-exec-10] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 19:59:46.021 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog 
+2021-05-06 19:59:46.021 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 
+2021-05-06 19:59:46.030 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 8
+2021-05-06 19:59:50.880 DEBUG 26068 --- [http-nio-8081-exec-6] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 19:59:50.880 DEBUG 26068 --- [http-nio-8081-exec-6] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 19:59:50.881 DEBUG 26068 --- [http-nio-8081-exec-6] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:52.919 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-05-06 19:59:52.919 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-05-06 19:59:52.922 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-05-06 19:59:52.923 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 19:59:52.923 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 19:59:52.924 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:52.925 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 19:59:52.925 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 19:59:52.926 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 19:59:52.926 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-05-06 19:59:52.927 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-05-06 19:59:52.927 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-05-06 19:59:52.928 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-05-06 19:59:52.928 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-05-06 19:59:52.930 DEBUG 26068 --- [http-nio-8081-exec-5] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:56.784 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 19:59:56.784 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 19:59:56.785 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:59.152 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 19:59:59.152 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 19:59:59.152 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 19:59:59.153 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (type_id = ?) 
+2021-05-06 19:59:59.154 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Long)
+2021-05-06 19:59:59.166 DEBUG 26068 --- [http-nio-8081-exec-9] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-05-06 20:00:10.672 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 20:00:10.672 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 20:00:10.673 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 20:00:12.014 DEBUG 26068 --- [http-nio-8081-exec-8] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 20:00:12.014 DEBUG 26068 --- [http-nio-8081-exec-8] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 20:00:12.015 DEBUG 26068 --- [http-nio-8081-exec-8] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 20:00:12.017 DEBUG 26068 --- [http-nio-8081-exec-8] c.u.m.m.TBlogMapper.findBlogByTagId      : ==>  Preparing: select * from t_blog where (published=1) and tag_ids like '%5%' 
+2021-05-06 20:00:12.017 DEBUG 26068 --- [http-nio-8081-exec-8] c.u.m.m.TBlogMapper.findBlogByTagId      : ==> Parameters: 
+2021-05-06 20:00:12.027 DEBUG 26068 --- [http-nio-8081-exec-8] c.u.m.m.TBlogMapper.findBlogByTagId      : <==      Total: 3
+2021-05-06 20:00:24.287 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog 
+2021-05-06 20:00:24.287 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 
+2021-05-06 20:00:24.289 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 8
+2021-05-06 20:00:58.514 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-05-06 20:00:58.515 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-05-06 20:00:58.518 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-05-06 20:00:58.518 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-05-06 20:00:58.519 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-05-06 20:00:58.520 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-05-06 20:00:58.520 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-05-06 20:00:58.520 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-05-06 20:00:58.521 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-05-06 20:00:58.522 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-05-06 20:00:58.522 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-05-06 20:00:58.522 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-05-06 20:00:58.524 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-05-06 20:00:58.524 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-05-06 20:00:58.525 DEBUG 26068 --- [http-nio-8081-exec-2] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-05-06 20:01:00.717 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.updateView      : ==>  Preparing: update t_blog set views = views + 1 where id =? 
+2021-05-06 20:01:00.717 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.updateView      : ==> Parameters: 1(Long)
+2021-05-06 20:01:00.732 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.updateView      : <==    Updates: 1
+2021-05-06 20:01:00.732 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.myblog.mapper.TBlogMapper.selectOne  : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (id = ?) 
+2021-05-06 20:01:00.732 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.myblog.mapper.TBlogMapper.selectOne  : ==> Parameters: 1(Long)
+2021-05-06 20:01:00.734 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.myblog.mapper.TBlogMapper.selectOne  : <==      Total: 1
+2021-05-06 20:01:00.765 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.selectTagsById  : ==>  Preparing: select tag_ids from t_blog where id = ? 
+2021-05-06 20:01:00.765 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.selectTagsById  : ==> Parameters: 1(Long)
+2021-05-06 20:01:00.766 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.selectTagsById  : <==      Total: 1
+2021-05-06 20:01:00.767 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.findBlogTag     : ==>  Preparing: select * from t_tag as t where id in ( ? ) 
+2021-05-06 20:01:00.767 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.findBlogTag     : ==> Parameters: 6(String)
+2021-05-06 20:01:00.769 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TBlogMapper.findBlogTag     : <==      Total: 1
+2021-05-06 20:01:00.770 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TCommentMapper.selectList   : ==>  Preparing: SELECT id,nickname,email,content,avatar,create_time,blog_id,parent_comment_id,admincomment FROM t_comment WHERE (blog_id = ?) 
+2021-05-06 20:01:00.770 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TCommentMapper.selectList   : ==> Parameters: 1(Long)
+2021-05-06 20:01:00.771 DEBUG 26068 --- [http-nio-8081-exec-3] c.u.m.mapper.TCommentMapper.selectList   : <==      Total: 0
+2021-05-06 20:01:16.430 DEBUG 26068 --- [http-nio-8081-exec-6] c.u.myblog.mapper.TCommentMapper.insert  : ==>  Preparing: INSERT INTO t_comment ( nickname, email, content, create_time, blog_id ) VALUES ( ?, ?, ?, ?, ? ) 
+2021-05-06 20:01:16.431 DEBUG 26068 --- [http-nio-8081-exec-6] c.u.myblog.mapper.TCommentMapper.insert  : ==> Parameters: (String), (String), haha(String), 2021-05-06 20:01:16.429(Timestamp), 1(Long)
+2021-05-06 20:01:16.433 DEBUG 26068 --- [http-nio-8081-exec-6] c.u.myblog.mapper.TCommentMapper.insert  : <==    Updates: 1
+2021-05-06 20:01:16.441 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.updateView      : ==>  Preparing: update t_blog set views = views + 1 where id =? 
+2021-05-06 20:01:16.441 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.updateView      : ==> Parameters: 1(Long)
+2021-05-06 20:01:16.444 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.updateView      : <==    Updates: 1
+2021-05-06 20:01:16.445 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TBlogMapper.selectOne  : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (id = ?) 
+2021-05-06 20:01:16.445 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TBlogMapper.selectOne  : ==> Parameters: 1(Long)
+2021-05-06 20:01:16.446 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TBlogMapper.selectOne  : <==      Total: 1
+2021-05-06 20:01:16.447 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectTagsById  : ==>  Preparing: select tag_ids from t_blog where id = ? 
+2021-05-06 20:01:16.447 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectTagsById  : ==> Parameters: 1(Long)
+2021-05-06 20:01:16.448 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectTagsById  : <==      Total: 1
+2021-05-06 20:01:16.448 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.findBlogTag     : ==>  Preparing: select * from t_tag as t where id in ( ? ) 
+2021-05-06 20:01:16.448 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.findBlogTag     : ==> Parameters: 6(String)
+2021-05-06 20:01:16.449 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.findBlogTag     : <==      Total: 1
+2021-05-06 20:01:16.450 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TCommentMapper.selectList   : ==>  Preparing: SELECT id,nickname,email,content,avatar,create_time,blog_id,parent_comment_id,admincomment FROM t_comment WHERE (blog_id = ?) 
+2021-05-06 20:01:16.450 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TCommentMapper.selectList   : ==> Parameters: 1(Long)
+2021-05-06 20:01:16.451 DEBUG 26068 --- [http-nio-8081-exec-1] c.u.m.mapper.TCommentMapper.selectList   : <==      Total: 1

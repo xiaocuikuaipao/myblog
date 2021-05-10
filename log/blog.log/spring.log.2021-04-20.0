@@ -1,0 +1,313 @@
+2021-04-20 13:52:46.784  INFO 17892 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 17892 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-04-20 13:52:46.788 DEBUG 17892 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 13:52:46.789  INFO 17892 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-04-20 13:52:46.835  INFO 17892 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-20 13:52:46.836  INFO 17892 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-20 13:52:47.985  INFO 17892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-20 13:52:47.996  INFO 17892 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-20 13:52:47.997  INFO 17892 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-20 13:52:48.091  INFO 17892 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-20 13:52:48.091  INFO 17892 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1255 ms
+2021-04-20 13:52:48.843  INFO 17892 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 13:52:48.901  INFO 17892 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 13:52:48.956  WARN 17892 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 13:52:49.139  INFO 17892 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-20 13:52:49.187  INFO 17892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-20 13:52:49.191  INFO 17892 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 2.83 seconds (JVM running for 3.629)
+2021-04-20 13:53:10.843  INFO 17892 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-20 13:53:10.843  INFO 17892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-20 13:53:10.860  INFO 17892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2021-04-20 13:53:10.927  INFO 17892 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-20 13:53:11.140  INFO 17892 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-20 13:53:11.151 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-04-20 13:53:11.179 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-04-20 13:53:11.230 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-04-20 13:53:11.254 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-04-20 13:53:11.254 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-04-20 13:53:11.256 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-04-20 13:53:11.257 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-04-20 13:53:11.257 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-04-20 13:53:11.259 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-04-20 13:53:11.260 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-04-20 13:53:11.261 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-04-20 13:53:11.263 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-04-20 13:53:11.300 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-04-20 13:53:11.300 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-04-20 13:53:11.313 DEBUG 17892 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-04-20 13:53:25.925 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.updateView      : ==>  Preparing: update t_blog set views = views + 1 where id =? 
+2021-04-20 13:53:25.926 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.updateView      : ==> Parameters: 4(Long)
+2021-04-20 13:53:25.933 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.updateView      : <==    Updates: 1
+2021-04-20 13:53:25.937 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.myblog.mapper.TBlogMapper.selectOne  : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (id = ?) 
+2021-04-20 13:53:25.939 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.myblog.mapper.TBlogMapper.selectOne  : ==> Parameters: 4(Long)
+2021-04-20 13:53:25.940 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.myblog.mapper.TBlogMapper.selectOne  : <==      Total: 1
+2021-04-20 13:53:26.020 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.selectTagsById  : ==>  Preparing: select tag_ids from t_blog where id = ? 
+2021-04-20 13:53:26.020 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.selectTagsById  : ==> Parameters: 4(Long)
+2021-04-20 13:53:26.027 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.selectTagsById  : <==      Total: 1
+2021-04-20 13:53:26.027 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.findBlogTag     : ==>  Preparing: select * from t_tag as t where id in ( ? ) 
+2021-04-20 13:53:26.027 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.findBlogTag     : ==> Parameters: 5(String)
+2021-04-20 13:53:26.035 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TBlogMapper.findBlogTag     : <==      Total: 1
+2021-04-20 13:53:26.039 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TCommentMapper.selectList   : ==>  Preparing: SELECT id,nickname,email,content,avatar,create_time,blog_id,parent_comment_id,admincomment FROM t_comment WHERE (blog_id = ?) 
+2021-04-20 13:53:26.040 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TCommentMapper.selectList   : ==> Parameters: 4(Long)
+2021-04-20 13:53:26.042 DEBUG 17892 --- [http-nio-8080-exec-7] c.u.m.mapper.TCommentMapper.selectList   : <==      Total: 3
+2021-04-20 13:56:10.846  INFO 17412 --- [main] com.usst.myblog.MyblogApplicationTests   : Starting MyblogApplicationTests on LAPTOP-O5T7BV5D with PID 17412 (started by czd in D:\JetBrains\myblog)
+2021-04-20 13:56:10.848 DEBUG 17412 --- [main] com.usst.myblog.MyblogApplicationTests   : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 13:56:10.849  INFO 17412 --- [main] com.usst.myblog.MyblogApplicationTests   : No active profile set, falling back to default profiles: default
+2021-04-20 13:56:13.067  INFO 17412 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 13:56:13.185  INFO 17412 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 13:56:13.294  WARN 17412 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 13:56:13.553  INFO 17412 --- [main] com.usst.myblog.MyblogApplicationTests   : Started MyblogApplicationTests in 3.114 seconds (JVM running for 3.96)
+2021-04-20 13:56:14.100  INFO 17412 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:40:53.454  INFO 3508 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 3508 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-04-20 18:40:53.456 DEBUG 3508 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 18:40:53.457  INFO 3508 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-04-20 18:40:53.494  INFO 3508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-20 18:40:53.494  INFO 3508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-20 18:40:54.237  INFO 3508 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-20 18:40:54.237  INFO 3508 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-20 18:40:54.237  INFO 3508 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-20 18:40:54.284  INFO 3508 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-20 18:40:54.284  INFO 3508 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 790 ms
+2021-04-20 18:40:54.763  INFO 3508 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:40:54.811  INFO 3508 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 18:40:54.838  WARN 3508 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 18:40:54.947  INFO 3508 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-20 18:40:54.978  INFO 3508 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-20 18:40:54.978  INFO 3508 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-20 18:40:54.978 ERROR 3508 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-04-20 18:40:54.994  INFO 3508 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:41:11.195  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 9040 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-04-20 18:41:11.195 DEBUG 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 18:41:11.195  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-04-20 18:41:11.242  INFO 9040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-20 18:41:11.242  INFO 9040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-20 18:41:11.964  INFO 9040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-20 18:41:11.980  INFO 9040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-20 18:41:11.980  INFO 9040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-20 18:41:12.027  INFO 9040 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-20 18:41:12.027  INFO 9040 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 785 ms
+2021-04-20 18:41:12.476  INFO 9040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:41:12.523  INFO 9040 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 18:41:12.555  WARN 9040 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 18:41:12.665  INFO 9040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-20 18:41:12.696  INFO 9040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-20 18:41:12.696  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 1.772 seconds (JVM running for 2.271)
+2021-04-20 18:41:21.792  INFO 9040 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-20 18:41:21.792  INFO 9040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-20 18:41:21.796  INFO 9040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-04-20 18:41:21.819  INFO 9040 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-20 18:41:21.883  INFO 9040 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-20 18:41:21.887 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-04-20 18:41:21.900 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-04-20 18:41:21.915 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-04-20 18:41:21.925 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-04-20 18:41:21.925 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-04-20 18:41:21.926 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-04-20 18:41:21.927 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-04-20 18:41:21.927 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-04-20 18:41:21.929 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-04-20 18:41:21.929 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-04-20 18:41:21.930 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-04-20 18:41:21.931 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-04-20 18:41:21.944 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-04-20 18:41:21.945 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-04-20 18:41:21.948 DEBUG 9040 --- [http-nio-8080-exec-1] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-04-20 18:41:34.825 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-04-20 18:41:34.825 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 6(Integer), 6(Integer)
+2021-04-20 18:41:34.827 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 2
+2021-04-20 18:41:34.828 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-04-20 18:41:34.828 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-04-20 18:41:34.829 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-04-20 18:41:34.829 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-04-20 18:41:34.829 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-04-20 18:41:34.830 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-04-20 18:41:34.830 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-04-20 18:41:34.830 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-04-20 18:41:34.831 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-04-20 18:41:34.833 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-04-20 18:41:34.834 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-04-20 18:41:34.839 DEBUG 9040 --- [http-nio-8080-exec-2] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-04-20 18:41:54.249  INFO 9040 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:41:54.250  INFO 9040 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-20 18:41:54.254  INFO 9040 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-20 18:42:01.346  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 9040 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-04-20 18:42:01.346 DEBUG 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 18:42:01.346  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-04-20 18:42:01.531  WARN 9040 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.usst.myblog.mapper]' package. Please check your configuration.
+2021-04-20 18:42:01.584  INFO 9040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-20 18:42:01.586  INFO 9040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-20 18:42:01.586  INFO 9040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-20 18:42:01.605  INFO 9040 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-04-20 18:42:01.606  INFO 9040 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 257 ms
+2021-04-20 18:42:01.661  INFO 9040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:42:01.674  INFO 9040 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 18:42:01.695  WARN 9040 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 18:42:01.726  WARN 9040 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+2021-04-20 18:42:01.727  INFO 9040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:42:01.728  INFO 9040 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-20 18:42:01.732  INFO 9040 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-20 18:42:01.736 ERROR 9040 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.usst.myblog.MyblogApplication.main(MyblogApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 24 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:430)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:628)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:218)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$24659053.CGLIB$sqlSessionFactory$1(<generated>)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$24659053$$FastClassBySpringCGLIB$$c1440b3a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$24659053.sqlSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\JetBrains\myblog\target\classes\com\usst\myblog\mapper\xml\TBlogMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:593)
+	... 38 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	... 40 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.usst.myblog.pojo.TBlog'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 44 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.usst.myblog.pojo.TBlog
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 46 common frames omitted
+
+2021-04-20 18:42:03.778  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 9040 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-04-20 18:42:03.778 DEBUG 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 18:42:03.778  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-04-20 18:42:03.996  INFO 9040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-20 18:42:03.997  INFO 9040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-20 18:42:03.997  INFO 9040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-20 18:42:04.012  INFO 9040 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-04-20 18:42:04.012  INFO 9040 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 232 ms
+2021-04-20 18:42:04.277  INFO 9040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:42:04.289  INFO 9040 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 18:42:04.306  WARN 9040 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 18:42:04.372  INFO 9040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-20 18:42:04.395  INFO 9040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-20 18:42:04.395  INFO 9040 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 0.638 seconds (JVM running for 53.962)
+2021-04-20 18:42:04.398  INFO 9040 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-20 18:42:04.885  INFO 4604 --- [main] com.usst.myblog.MyblogApplicationTests   : Starting MyblogApplicationTests on LAPTOP-O5T7BV5D with PID 4604 (started by czd in D:\JetBrains\myblog)
+2021-04-20 18:42:04.885 DEBUG 4604 --- [main] com.usst.myblog.MyblogApplicationTests   : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 18:42:04.885  INFO 4604 --- [main] com.usst.myblog.MyblogApplicationTests   : No active profile set, falling back to default profiles: default
+2021-04-20 18:42:06.955  INFO 4604 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:42:07.081  INFO 4604 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 18:42:07.206  WARN 4604 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 18:42:07.452  INFO 4604 --- [main] com.usst.myblog.MyblogApplicationTests   : Started MyblogApplicationTests in 2.928 seconds (JVM running for 3.719)
+2021-04-20 18:42:07.981  INFO 4604 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:48:14.871  INFO 15224 --- [restartedMain] com.usst.myblog.MyblogApplication        : Starting MyblogApplication on LAPTOP-O5T7BV5D with PID 15224 (D:\JetBrains\myblog\target\classes started by czd in D:\JetBrains\myblog)
+2021-04-20 18:48:14.871 DEBUG 15224 --- [restartedMain] com.usst.myblog.MyblogApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-04-20 18:48:14.871  INFO 15224 --- [restartedMain] com.usst.myblog.MyblogApplication        : No active profile set, falling back to default profiles: default
+2021-04-20 18:48:14.902  INFO 15224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-20 18:48:14.902  INFO 15224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-20 18:48:15.609  INFO 15224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-04-20 18:48:15.625  INFO 15224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-20 18:48:15.625  INFO 15224 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-20 18:48:15.672  INFO 15224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-20 18:48:15.672  INFO 15224 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 770 ms
+2021-04-20 18:48:16.126  INFO 15224 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 18:48:16.173  INFO 15224 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-20 18:48:16.204  WARN 15224 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-04-20 18:48:16.326  INFO 15224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-20 18:48:16.361  INFO 15224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-04-20 18:48:16.363  INFO 15224 --- [restartedMain] com.usst.myblog.MyblogApplication        : Started MyblogApplication in 1.764 seconds (JVM running for 2.245)
+2021-04-20 18:48:32.411  INFO 15224 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-20 18:48:32.411  INFO 15224 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-20 18:48:32.423  INFO 15224 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-04-20 18:48:32.452  INFO 15224 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-20 18:48:32.524  INFO 15224 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-20 18:48:32.529 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-04-20 18:48:32.543 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-04-20 18:48:32.558 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-04-20 18:48:32.569 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-04-20 18:48:32.570 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-04-20 18:48:32.571 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-04-20 18:48:32.571 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-04-20 18:48:32.572 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-04-20 18:48:32.573 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-04-20 18:48:32.574 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-04-20 18:48:32.574 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-04-20 18:48:32.575 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-04-20 18:48:32.589 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-04-20 18:48:32.590 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-04-20 18:48:32.593 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-04-20 18:56:23.626 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog ORDER BY id ASC LIMIT ?,? 
+2021-04-20 18:56:23.627 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : ==> Parameters: 0(Integer), 6(Integer)
+2021-04-20 18:56:23.634 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectByPage    : <==      Total: 6
+2021-04-20 18:56:23.635 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==>  Preparing: SELECT id,name FROM t_type 
+2021-04-20 18:56:23.635 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : ==> Parameters: 
+2021-04-20 18:56:23.637 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TTypeMapper.selectList      : <==      Total: 7
+2021-04-20 18:56:23.638 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==>  Preparing: SELECT id,name FROM t_tag 
+2021-04-20 18:56:23.638 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : ==> Parameters: 
+2021-04-20 18:56:23.639 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.myblog.mapper.TTagMapper.selectList  : <==      Total: 7
+2021-04-20 18:56:23.640 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==>  Preparing: SELECT COUNT( 1 ) FROM t_blog 
+2021-04-20 18:56:23.640 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : ==> Parameters: 
+2021-04-20 18:56:23.640 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectCount     : <==      Total: 1
+2021-04-20 18:56:23.642 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog WHERE (recommend = ?) ORDER BY create_time ASC 
+2021-04-20 18:56:23.642 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 1(Integer)
+2021-04-20 18:56:23.645 DEBUG 15224 --- [http-nio-8081-exec-1] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 7
+2021-04-20 18:56:38.307 DEBUG 15224 --- [http-nio-8081-exec-8] c.u.m.mapper.TBlogMapper.selectList      : ==>  Preparing: SELECT id,title,content,first_picture,flag,views,appreciation,share_statement,commentabled,published,recommend,create_time,update_time,type_id,user_id,description,tag_ids FROM t_blog 
+2021-04-20 18:56:38.307 DEBUG 15224 --- [http-nio-8081-exec-8] c.u.m.mapper.TBlogMapper.selectList      : ==> Parameters: 
+2021-04-20 18:56:38.310 DEBUG 15224 --- [http-nio-8081-exec-8] c.u.m.mapper.TBlogMapper.selectList      : <==      Total: 8
